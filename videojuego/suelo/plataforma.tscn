@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://boo1jvnjd0k2p"]
+
+[ext_resource type="Texture2D" uid="uid://yymb1fld8q8q" path="res://assests/floor/plataformas/dirtHalf.png" id="1_532d8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c3nf"]
+size = Vector2(868, 106)
+
+[node name="plataforma" type="StaticBody2D"]
+
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(0, 28)
+scale = Vector2(12.314285, 6.785714)
+texture = ExtResource("1_532d8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -156)
+shape = SubResource("RectangleShape2D_1c3nf")
+one_way_collision = true

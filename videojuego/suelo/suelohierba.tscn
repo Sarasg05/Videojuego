@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxdvqu3wfulch"]
+
+[ext_resource type="Texture2D" uid="uid://bbf2txtta0jm" path="res://assests/floor/hierba_nivel1/grass.png" id="1_ghth5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c3nf"]
+size = Vector2(863, 218)
+
+[node name="sueloHierba" type="StaticBody2D"]
+
+[node name="Grass" type="Sprite2D" parent="."]
+scale = Vector2(12.314285, 6.785714)
+texture = ExtResource("1_ghth5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -127)
+shape = SubResource("RectangleShape2D_1c3nf")

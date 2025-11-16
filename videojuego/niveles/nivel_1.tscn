@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://chvw8vn4al55"]
+
+[ext_resource type="PackedScene" uid="uid://bxdvqu3wfulch" path="res://suelo/suelohierba.tscn" id="1_eu3iu"]
+[ext_resource type="PackedScene" uid="uid://boo1jvnjd0k2p" path="res://suelo/plataforma.tscn" id="3_adjju"]
+[ext_resource type="PackedScene" uid="uid://iwighs33vqw0" path="res://enemigos/armas_enemigos/moneda.tscn" id="4_1oike"]
+[ext_resource type="PackedScene" uid="uid://cqjilcdwb3ju1" path="res://personaje/personaje.tscn" id="4_eu3iu"]
+[ext_resource type="Texture2D" uid="uid://u804qlookwth" path="res://assests/decoration/cactus.png" id="5_adjju"]
+[ext_resource type="Texture2D" uid="uid://cgcjfmktpftwy" path="res://assests/decoration/chain.png" id="6_1oike"]
+
+[node name="Nivel1" type="Node2D"]
+position = Vector2(113, 477)
+scale = Vector2(0.1709979, 0.2547703)
+
+[node name="decoracion" type="Node2D" parent="."]
+scale = Vector2(0.998652, 1)
+
+[node name="Cactus2" type="Sprite2D" parent="decoracion"]
+position = Vector2(2506.333, 78.502075)
+scale = Vector2(4.508365, 4.155943)
+texture = ExtResource("5_adjju")
+
+[node name="Cactus" type="Sprite2D" parent="decoracion"]
+position = Vector2(3806.3472, 86.3523)
+scale = Vector2(4.5413494, 3.9172137)
+texture = ExtResource("5_adjju")
+
+[node name="Chain" type="Sprite2D" parent="decoracion"]
+position = Vector2(1686.5044, 337.559)
+scale = Vector2(4.1026945, 5.175449)
+texture = ExtResource("6_1oike")
+
+[node name="Chain2" type="Sprite2D" parent="decoracion"]
+position = Vector2(1323.4376, 314.0083)
+scale = Vector2(5.402148, 4.295759)
+texture = ExtResource("6_1oike")
+
+[node name="sueloHierba" parent="." instance=ExtResource("1_eu3iu")]
+position = Vector2(146, 503)
+
+[node name="plataforma" parent="." instance=ExtResource("3_adjju")]
+position = Vector2(1408, 100)
+
+[node name="sueloHierba2" parent="." instance=ExtResource("1_eu3iu")]
+position = Vector2(3836, 514.99994)
+scale = Vector2(3.8076546, 1.2392768)
+
+[node name="moneda" parent="." instance=ExtResource("4_1oike")]
+position = Vector2(170, -836)
+
+[node name="moneda2" parent="." instance=ExtResource("4_1oike")]
+position = Vector2(1393, -1109)
+
+[node name="moneda3" parent="." instance=ExtResource("4_1oike")]
+position = Vector2(3338, -686)
+
+[node name="Personaje" parent="." instance=ExtResource("4_eu3iu")]
+position = Vector2(128.65656, 54.951477)
+
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+position = Vector2(-128.65656, -54.951416)

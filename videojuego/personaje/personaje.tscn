@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqjilcdwb3ju1"]
+
+[ext_resource type="Texture2D" uid="uid://bx1b433n1yqqy" path="res://assests/player/monkey.png" id="1_rqmaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diry1"]
+size = Vector2(257, 262)
+
+[node name="Personaje" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rqmaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -2)
+shape = SubResource("RectangleShape2D_diry1")
