@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://chvw8vn4al55"]
+[gd_scene load_steps=9 format=3 uid="uid://chvw8vn4al55"]
 
 [ext_resource type="PackedScene" uid="uid://bxdvqu3wfulch" path="res://suelo/suelohierba.tscn" id="1_eu3iu"]
 [ext_resource type="PackedScene" uid="uid://boo1jvnjd0k2p" path="res://suelo/plataforma.tscn" id="3_adjju"]
-[ext_resource type="PackedScene" uid="uid://iwighs33vqw0" path="res://enemigos/armas_enemigos/moneda.tscn" id="4_1oike"]
 [ext_resource type="PackedScene" uid="uid://cqjilcdwb3ju1" path="res://personaje/personaje.tscn" id="4_eu3iu"]
 [ext_resource type="Texture2D" uid="uid://u804qlookwth" path="res://assests/decoration/cactus.png" id="5_adjju"]
 [ext_resource type="Texture2D" uid="uid://cgcjfmktpftwy" path="res://assests/decoration/chain.png" id="6_1oike"]
+[ext_resource type="Script" uid="uid://4o8kl1gqytfs" path="res://personaje/personaje.gd" id="7_yi6tr"]
+[ext_resource type="Script" uid="uid://dhq7b77osgkn7" path="res://niveles/camera_2d.gd" id="8_uxua8"]
+[ext_resource type="PackedScene" uid="uid://6v2uyjip2fip" path="res://enemigos/enemigo.tscn" id="8_yi6tr"]
 
 [node name="Nivel1" type="Node2D"]
-position = Vector2(113, 477)
-scale = Vector2(0.1709979, 0.2547703)
+scale = Vector2(0.17295799, 0.2332043)
 
 [node name="decoracion" type="Node2D" parent="."]
 scale = Vector2(0.998652, 1)
@@ -44,17 +45,17 @@ position = Vector2(1408, 100)
 position = Vector2(3836, 514.99994)
 scale = Vector2(3.8076546, 1.2392768)
 
-[node name="moneda" parent="." instance=ExtResource("4_1oike")]
-position = Vector2(170, -836)
-
-[node name="moneda2" parent="." instance=ExtResource("4_1oike")]
-position = Vector2(1393, -1109)
-
-[node name="moneda3" parent="." instance=ExtResource("4_1oike")]
-position = Vector2(3338, -686)
-
 [node name="Personaje" parent="." instance=ExtResource("4_eu3iu")]
 position = Vector2(128.65656, 54.951477)
+script = ExtResource("7_yi6tr")
+speed = 250
 
-[node name="Camera2D" type="Camera2D" parent="Personaje"]
-position = Vector2(-128.65656, -54.951416)
+[node name="Enemigo" parent="." instance=ExtResource("8_yi6tr")]
+position = Vector2(4450.347, -478.86273)
+scale = Vector2(4.028061, 2.6460524)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("object_to_follow")]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("8_uxua8")
+object_to_follow = NodePath("../Personaje")
